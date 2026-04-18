@@ -280,13 +280,88 @@ textarea.contact-input {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+  /* Scene Padding */
   .scene {
-    padding: 60px 20px;
+    padding: 60px 16px;
   }
+  
+  /* Timeline */
   .timeline {
-    padding-left: 30px;
+    padding-left: 20px;
   }
   .timeline-item::before {
-    left: -34px;
+    left: -24px;
+    width: 8px;
+    height: 8px;
+  }
+
+  /* Skills Horizontal Scroll fixes */
+  #skills > div {
+    padding-left: 5vw !important;
+    padding-right: 5vw !important;
+  }
+  /* The Header Card in Skills */
+  #skills > div > div:first-child {
+    min-width: 75vw !important;
+    padding-right: 12vw !important;
+  }
+  /* The Skill Cards */
+  .skill-card {
+    min-width: 180px !important;
+    height: 240px !important;
+    margin-right: 16px !important;
+    padding: 20px 16px !important;
+  }
+  .skill-card h3 {
+    font-size: 1.15rem !important;
+  }
+
+  /* About Section Profile Image fixes */
+  #about > div > div {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 40px !important;
+  }
+
+  /* Projects Section Font sizes & padding */
+  .project-scene {
+    padding: 60px 16px !important;
+  }
+  .project-content {
+    gap: 24px !important;
+  }
+  .project-title {
+    font-size: 2rem !important;
+  }
+  .project-desc {
+    font-size: 1rem !important;
+  }
+
+  /* Leadership Font Sizing */
+  .leadership-role h3 {
+    font-size: clamp(2rem, 8vw, 3rem) !important;
+  }
+  
+  /* Contact Form spacing */
+  .contact-form {
+    gap: 24px !important;
+    margin-bottom: 60px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading-xl {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+  .heading-lg {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+  }
+  .body-lg {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .scene-divider {
+    margin-top: 60px !important;
+    margin-bottom: 60px !important;
   }
 }

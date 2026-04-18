@@ -47,17 +47,21 @@ function Nav() {
       ref={navRef}
       style={{
         position: 'fixed',
-        top: '24px',
+        top: '20px',
         left: '50%',
         transform: 'translateX(-50%)',
         zIndex: 1000,
         display: 'flex',
-        gap: '4px',
-        padding: '6px 8px',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        width: 'max-content',
+        maxWidth: '90vw',
+        gap: '6px',
+        padding: '6px 10px',
         borderRadius: '50px',
-        background: 'rgba(10,10,10,0.8)',
+        background: 'rgba(10,10,10,0.85)',
         backdropFilter: 'blur(20px)',
-        border: '1px solid rgba(255,255,255,0.06)',
+        border: '1px solid rgba(255,255,255,0.08)',
         opacity: 0,
         transition: 'opacity 0.5s ease',
         pointerEvents: 'none',
@@ -69,8 +73,8 @@ function Nav() {
           href={item.href}
           className="hoverable"
           style={{
-            padding: '8px 18px',
-            fontSize: '0.72rem',
+            padding: '6px 12px',
+            fontSize: '0.65rem',
             fontFamily: 'var(--font-display)',
             fontWeight: 500,
             letterSpacing: '0.08em',
