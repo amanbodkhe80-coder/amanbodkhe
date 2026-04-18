@@ -103,7 +103,12 @@ export default function Hero() {
       ref={containerRef}
       id="hero"
       className="scene"
-      style={{ minHeight: '150vh', flexDirection: 'column' }}
+      style={{
+        minHeight: '150vh',
+        flexDirection: 'column',
+        padding: 0,
+        justifyContent: 'flex-start'
+      }}
     >
       {/* Ambient glow */}
       <div
@@ -126,14 +131,29 @@ export default function Hero() {
           position: 'sticky',
           top: 0,
           height: '100vh',
+          width: '100%',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
           textAlign: 'center',
           gap: '24px',
+          padding: '0 24px',
         }}
       >
+        {/* Background Image */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            backgroundImage: 'url(/aman--.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.45, // Increased visibility as requested
+            zIndex: -1,
+            pointerEvents: 'none',
+          }}
+        />
         {/* Line 1 */}
         <div ref={line1Ref} style={{ position: 'absolute' }}>
           <p
