@@ -121,67 +121,114 @@ export default function About() {
             flexWrap: 'wrap',
           }}
         >
-          {/* Profile Image — frameless, floating on darkness */}
+          {/* Profile Image — with professional reddish background */}
           <div
             ref={imageWrapperRef}
             style={{
               position: 'relative',
               flexShrink: 0,
               width: '280px',
-              height: '340px',
+              height: '360px',
               margin: '0 auto',
+              borderRadius: '16px',
+              overflow: 'hidden',
             }}
           >
-            {/* Atmospheric glow behind figure */}
+            {/* ── Reddish gradient background layers ── */}
             <div
               style={{
                 position: 'absolute',
-                top: '10%',
+                inset: 0,
+                background: 'linear-gradient(160deg, #0a0a0a 0%, #1a0808 25%, #2d0a0a 50%, #1a0505 75%, #0a0a0a 100%)',
+                zIndex: 0,
+              }}
+            />
+            {/* Core crimson glow — centered behind the figure */}
+            <div
+              style={{
+                position: 'absolute',
+                top: '15%',
                 left: '50%',
                 transform: 'translateX(-50%)',
-                width: '200%',
-                height: '120%',
-                background:
-                  'radial-gradient(ellipse at 50% 40%, rgba(0,168,255,0.12) 0%, rgba(0,168,255,0.04) 35%, transparent 65%)',
+                width: '160%',
+                height: '90%',
+                background: 'radial-gradient(ellipse at 50% 35%, rgba(180,20,20,0.35) 0%, rgba(120,10,10,0.15) 40%, transparent 70%)',
+                zIndex: 0,
                 pointerEvents: 'none',
-                filter: 'blur(30px)',
+              }}
+            />
+            {/* Subtle edge highlight — cinematic side lighting */}
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                width: '60%',
+                height: '100%',
+                background: 'linear-gradient(250deg, rgba(200,40,40,0.18) 0%, transparent 60%)',
+                zIndex: 0,
+                pointerEvents: 'none',
+              }}
+            />
+            {/* Warm ambient particles / noise texture effect */}
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                background: 'radial-gradient(circle at 75% 25%, rgba(255,60,60,0.08) 0%, transparent 50%), radial-gradient(circle at 20% 70%, rgba(200,30,30,0.06) 0%, transparent 40%)',
+                zIndex: 0,
+                pointerEvents: 'none',
               }}
             />
 
-            {/* The image — no container, no border, just floating */}
+            {/* The image — transparent bg, floating on the gradient */}
             <img
               ref={imageRef}
-              src="/Photo2-removebg-preview.png"
+              src="/aman-----removebg-preview.png"
               alt="Aman Bodkhe"
               style={{
                 width: '100%',
-                height: '120%',
+                height: '100%',
                 objectFit: 'cover',
-                objectPosition: 'center top',
+                objectPosition: 'center 10%',
                 display: 'block',
                 position: 'relative',
-                zIndex: 1,
-                filter: 'brightness(1.08) contrast(1.08)',
-                maskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)',
-                WebkitMaskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)',
+                zIndex: 2,
+                filter: 'brightness(1.05) contrast(1.08)',
+                maskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)',
+                WebkitMaskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)',
               }}
             />
 
-            {/* Soft ambient light splash beneath */}
+            {/* Bottom fade into page background */}
             <div
               style={{
                 position: 'absolute',
-                bottom: '-20px',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                width: '80%',
-                height: '60px',
-                background: 'radial-gradient(ellipse, rgba(0,168,255,0.1) 0%, transparent 70%)',
-                filter: 'blur(20px)',
+                bottom: 0,
+                left: 0,
+                right: 0,
+                height: '30%',
+                background: 'linear-gradient(to top, #0a0a0a 0%, transparent 100%)',
+                zIndex: 3,
                 pointerEvents: 'none',
               }}
             />
           </div>
+
+          {/* Outer atmospheric glow — red halo around the card */}
+          <div
+            style={{
+              position: 'absolute',
+              top: '10%',
+              left: '140px',
+              width: '280px',
+              height: '360px',
+              background: 'radial-gradient(ellipse at 50% 40%, rgba(180,20,20,0.12) 0%, transparent 60%)',
+              filter: 'blur(40px)',
+              pointerEvents: 'none',
+              zIndex: -1,
+            }}
+          />
 
           {/* Text content */}
           <div style={{ flex: 1, minWidth: '280px', paddingTop: '8px' }}>
